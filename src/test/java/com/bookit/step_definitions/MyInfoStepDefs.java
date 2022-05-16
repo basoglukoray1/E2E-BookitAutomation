@@ -12,6 +12,8 @@ import io.cucumber.java.en.When;
 
 public class MyInfoStepDefs {
 
+
+
 	@Given("user logs in using {string} {string}")
 	public void user_logs_in_using(String email, String password) {
 	    Driver.get().get(ConfigurationReader.get("url"));
@@ -23,7 +25,6 @@ public class MyInfoStepDefs {
 	    signInPage.signInButton.click();
 
 
-	    	    
 	}
 
 	@When("user is on the my self page")
