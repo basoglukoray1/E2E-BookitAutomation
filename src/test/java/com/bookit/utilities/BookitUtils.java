@@ -82,4 +82,39 @@ public class BookitUtils {
 
         return token;
     }
+
+    public static String getEmail(String user){
+
+        String email="";
+
+        switch (user) {
+
+            case "teacher":
+               email= ConfigurationReader.get("teacher_email");
+                break;
+
+            case "student_leader":
+               email= ConfigurationReader.get("team_leader_email");
+                break;
+            case "student_member_1":
+               email= ConfigurationReader.get("team_member1_email");
+                break;
+            case "student_member_2":
+                email=ConfigurationReader.get("team_member2_email");
+                break;
+            case "student_member_3":
+               email= ConfigurationReader.get("team_member3_email");
+               break;
+            case "student_member_4":
+               email= ConfigurationReader.get("team_member4_email");
+
+               break;
+        }
+        return email;
+
+    }
+
+
+
+
 }

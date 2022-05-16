@@ -2,9 +2,10 @@ package com.bookit.step_definitions;
 
 import com.bookit.utilities.DBUtils;
 import com.bookit.utilities.Driver;
-import cucumber.api.Scenario;
+//import io.cucumber.core.api.Scenario;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -39,7 +40,7 @@ public class Hooks {
 		if (scenario.isFailed()) {
 			// taking a screenshot
 			final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
-			scenario.embed(screenshot, "image/png");
+			scenario.attach(screenshot, "image/png",scenario.getName());
 		}
 		Driver.closeDriver();
 	}
