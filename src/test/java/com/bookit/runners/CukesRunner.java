@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 
         plugin = {
 
-                "html:target/cucumber-report.html",
+                "html:target/cucumber/report.html",
                 "rerun:target/rerun.txt",
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber",
                 "json:target/cucumber/report.json",
@@ -23,7 +23,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/bookit/step_definitions",
         dryRun = false,
-        tags = "@smoke"
+        tags = "@wip"
 
 )
 
