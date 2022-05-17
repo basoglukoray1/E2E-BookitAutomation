@@ -11,4 +11,4 @@ Feature:User information verification
     And I logged in Bookit API using "student_leader"
     When I GET the current leader batch name from API
     And I get the batch name from Database
-    Then UI,API and Database user information must match
+    Then UI,API and Database user batch information must match
