@@ -67,7 +67,7 @@ public class US3_verifyBatch_StepDefinition {
         batchNameDB = (int) dbMap1.get("number");
     }
 
-    @Then("UI,API and Database user in")
+    @Then("UI,API and Database user information must match")
     public void ui_api_and_database_user_in() {
 
 
