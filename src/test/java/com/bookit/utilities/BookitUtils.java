@@ -72,7 +72,7 @@ public class BookitUtils {
                 break;
             case "student_member_4":
                 ConfigurationReader.get("team_member4_email");
-                ConfigurationReader.get("team_member_password");
+                ConfigurationReader.get("team_member4_password");
                 token += given().accept(ContentType.JSON).queryParam("email", ConfigurationReader.get("team_member4_email"))
                         .queryParam("password", ConfigurationReader.get("team_member4_password")).when().get(ConfigurationReader.get("base_url") + "/sign")
                         .then().log().all().extract().response().jsonPath().getString("accessToken");
