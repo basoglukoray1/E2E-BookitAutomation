@@ -20,7 +20,6 @@ public class pair3_step_Defs {
     Response response;
     String token;
     String globalEmail;
-
     String batchNameUI;
     Integer batchNameAPI;
     Integer batchNameDB;
