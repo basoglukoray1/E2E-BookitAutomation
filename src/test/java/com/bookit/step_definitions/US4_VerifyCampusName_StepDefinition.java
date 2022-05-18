@@ -10,6 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.http.ContentType;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Assert;
 
@@ -72,8 +73,21 @@ public class US4_VerifyCampusName_StepDefinition {
     @Then("UI,API and Database user campus location must match")
     public void uiAPIAndDatabaseUserCampusLocationMustMatch() {
 
+        //API
+        JsonPath jsonPath = response.jsonPath();
 
-        Assert.assertEquals(campusLocationDB,campusLocationAPI,campusLocationUI);
+        campusLocationAPI= jsonPath.getString("location");
+
+
+        //compare database vs API
+        Assert.assertEquals(campusLocationDB, campusLocationAPI);
+
+        //UI
+        String actualCampusUI = selfPage.campus.getText();
+
+        //compare UI vs API
+        Assert.assertEquals( campusLocationAPI, actualCampusUI);
+
 
     }
 }
